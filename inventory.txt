@@ -1,0 +1,12 @@
+[webserver]
+172.25.241.59
+
+[ftpserver]
+172.25.242.163
+
+[nodes:children]
+webserver
+ftpserver
+
+[nodes:vars]
+ansible_user=wissal

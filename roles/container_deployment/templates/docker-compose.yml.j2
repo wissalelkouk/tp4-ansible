@@ -1,0 +1,7 @@
+services:
+  web:
+    image: {{ web_image }}
+    container_name: ansible-web
+    ports:
+      - "{{ web_port }}:80"
+    restart: unless-stopped

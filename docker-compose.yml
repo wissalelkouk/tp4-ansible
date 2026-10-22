@@ -1,0 +1,7 @@
+services:
+  web:
+    image: "${WEB_IMAGE:-TON_USER_DOCKERHUB/ansible-web:latest}"
+    container_name: ansible-web
+    ports:
+      - "8081:80"
+    restart: unless-stopped

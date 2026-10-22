@@ -1,0 +1,11 @@
+---
+# Partie 5 : même résultat avec des rôles
+- name: Déployer la stack complète avec des rôles
+  hosts: nodes
+  become: true
+  gather_facts: true
+
+  roles:
+    - jenkins_install
+    - docker_portainer_install
+    - container_deployment

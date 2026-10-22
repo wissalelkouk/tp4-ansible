@@ -1,0 +1,36 @@
+---
+- name: Installer Java et les prérequis
+  ansible.builtin.apt:
+    name: [openjdk-21-jre, ca-certificates, curl, gnupg]
+    state: present
+    update_cache: true
+
+- name: Créer le dossier des clés apt
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Télécharger la clé du dépôt Jenkins
+  ansible.builtin.get_url:
+    url: "{{ jenkins_key_url }}"
+    dest: /etc/apt/keyrings/jenkins.asc
+    mode: '0644'
+
+- name: Ajouter le dépôt Jenkins
+  ansible.builtin.apt_repository:
+    repo: "{{ jenkins_repo }}"
+    filename: jenkins
+    state: present
+
+- name: Installer Jenkins
+  ansible.builtin.apt:
+    name: jenkins
+    state: present
+    update_cache: true
+
+- name: Démarrer et activer Jenkins
+  ansible.builtin.service:
+    name: jenkins
+    state: started
+    enabled: true
