@@ -21,8 +21,9 @@
 
     - name: Télécharger la clé du dépôt Jenkins
       ansible.builtin.get_url:
-        url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+        url: https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
         dest: /etc/apt/keyrings/jenkins.asc
+        force: true
         mode: '0644'
 
     - name: Ajouter le dépôt Jenkins

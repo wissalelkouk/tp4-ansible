@@ -15,6 +15,7 @@
   ansible.builtin.get_url:
     url: "{{ jenkins_key_url }}"
     dest: /etc/apt/keyrings/jenkins.asc
+    force: true
     mode: '0644'
 
 - name: Ajouter le dépôt Jenkins

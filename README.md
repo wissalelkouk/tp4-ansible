@@ -14,8 +14,8 @@ Master DevOps & Cloud. Réalisé par Wissal El Kouk.
 | 1 | `ansible.cfg` | Fait |
 | 2 | Playbook `webserver_install.yml`, idempotence | Fait |
 | 3 | Authentification SSH par clé | Fait |
-| 4 | Docker, Jenkins, Portainer, conteneur (`docker_stack.yml`) | En cours |
-| 5 | Rôles (`site.yml`) | En cours |
+| 4 | Docker, Jenkins, Portainer, conteneur (`docker_stack.yml`) | Fait |
+| 5 | Rôles (`site.yml`) | Fait |
 
 ## Contenu du dépôt
 - `inventory.txt`, `ansible.cfg`, `group_vars/all.yml`
@@ -45,3 +45,9 @@ ansible-playbook webserver_install.yml -k -K
 
 ### Connexion SSH par clé (sans -k)
 ![ssh-keys](captures/ssh-keys.png)
+
+### Jenkins, Portainer et conteneur web accessibles
+![containers](captures/containers.png)
+
+### Playbook à base de rôles (changed=0)
+![roles-run](captures/roles-run.png)

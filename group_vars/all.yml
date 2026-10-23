@@ -1,5 +1,5 @@
 ---
 # A MODIFIER : ton identifiant Docker Hub
-dockerhub_user: "TON_USER_DOCKERHUB"
+dockerhub_user: "wissl"
 web_image: "{{ dockerhub_user }}/ansible-web:latest"
 web_port: 8081
