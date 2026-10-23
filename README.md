@@ -47,7 +47,17 @@ ansible-playbook webserver_install.yml -k -K
 ![ssh-keys](captures/ssh-keys.png)
 
 ### Jenkins, Portainer et conteneur web accessibles
-![containers](captures/containers.png)
 
+Jenkins (port 8080) :
+
+![Jenkins](captures/containers.png)
+
+Portainer (port 9443) :
+
+![Portainer](captures/containers1.png)
+
+Site web du conteneur (port 8081) :
+
+![Site web](captures/containers3.png)
 ### Playbook à base de rôles (changed=0)
 ![roles-run](captures/roles-run.png)
